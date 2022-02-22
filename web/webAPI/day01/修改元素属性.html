@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 默认显示可达鸭图片点击按钮显示那个图片 -->
+    <button id="kdy">可达鸭</button>
+    <button id="pkq">皮卡丘</button> <br>
+    <img src="images/可达鸭.png" alt="" title="可达鸭">
+
+    <script>
+        //修改元素属性 src
+        // 1.获取元素
+        var kdy = document.getElementById('kdy');
+        var pkq = document.getElementById('pkq');
+        var img = document.querySelector('img');
+        // 2.注册事件 处理程序
+        pkq.onclick = function () {
+            img.src = 'images/皮卡丘.jpg';
+            img.title = '皮卡丘';
+        }
+        kdy.onclick = function () {
+            img.src = 'images/可达鸭.png';
+            img.title = '可达鸭';
+        }
+    </script>
+</body>
+
+</html>

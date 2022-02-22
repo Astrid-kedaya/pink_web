@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.构造函数 泛指一大类 类似于 类（class）
+        function Star(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+        // 2.对象  是一个具体的事物 刘德华 {name: '刘德华', age: 18, sex: '男', sing: ƒ}
+        var ldh = new Star('刘德华',18,'男');
+        console.log(ldh);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

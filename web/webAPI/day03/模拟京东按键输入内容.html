@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+        var search = document.querySelector('input');
+        document.addEventListener('keyup', function (e) {
+            //若用keydown keydown会一直触发直至弹起 搜索框也会输入s 所以keyup更合适
+            if (e.keyCode == 83) {
+                search.focus();
+            }
+        })
+    </script>
+</body>
+
+</html>

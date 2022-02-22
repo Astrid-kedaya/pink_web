@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.反转数组
+        var arr = [1, 2, 3];
+        arr.reverse()
+        console.log(arr);
+        // 2.数组排序(冒泡排序)
+        var arr1 = [3, 4, 7, 1];
+        arr1.sort();
+        console.log(arr1);//[1,3,4,7]
+        var arr2 = [1, 13, 4, 7, 77];
+        arr2.sort();
+        console.log(arr2);//[1, 13, 4, 7, 77]先排最左边的位数,1和13放一起,4,7和77放一起\
+        // 解决办法
+        arr2.sort(function (a, b) {
+            // return a - b;升序
+            return b-a;//降序
+        });
+        console.log(arr2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

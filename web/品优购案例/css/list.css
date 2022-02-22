@@ -1,0 +1,130 @@
+.nav {
+    overflow: hidden;
+}
+
+.sk {
+    position: absolute;
+    top: 38px;
+    left: 185px;
+    border-left: 1px solid #c81523;
+    padding: 3px 0 0 15px;
+}
+
+.sk_list {
+    float: left;
+}
+
+.sk_list ul li {
+    float: left;
+}
+
+.sk_list ul li a {
+    display: block;
+    line-height: 47px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.sk_con {
+    float: right;
+    margin-right: 30px;
+}
+
+.sk_con ul li {
+    float: left;
+}
+
+.sk_con ul li a {
+    /* 文字偏下一点 */
+    line-height: 49px;
+    padding: 0 23px;
+    font-size: 14px;
+}
+
+.sk_con ul li:last-child a::after {
+    font-family: 'iconfont';
+    content: "\e6cc";
+    margin-left: 5px;
+}
+
+.sk_hd {
+    height: 120px;
+    margin-bottom: 13px;
+}
+
+.sk_bd ul li {
+    float: left;
+    margin: 12px 13px 0 0;
+    width: 290px;
+    height: 460px;
+    /* 防止鼠标经过后因为多了1px边框而抖动 */
+    border: 1px solid transparent;
+}
+
+.sk_bd ul li:hover {
+    border: 1px solid #c81523;
+}
+
+.sk_bd ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.sk_bd ul li img {
+    width: 100%;
+    height: 288px;
+}
+
+.sk_bd ul li h4 {
+    line-height: 22px;
+    margin: 0 10px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.sk_bd ul li .price {
+    font-size: 14px;
+    margin: 5px 12px 13px;
+    color: #a4a4a4;
+}
+
+.sk_bd ul li .price span {
+    font-size: 22px;
+}
+
+.sk_bd .shenyu {
+    height: 14px;
+}
+
+.sk_bd .shenyu div {
+    float: left;
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.sk_bd .shenyu .jdt {
+    width: 132px;
+    height: 13px;
+    border: 1px solid #c81523;
+    border-radius: 7px;
+}
+
+.sk_bd .shenyu .jdt_inner {
+    width: 100px;
+    height: 11px;
+    margin: 0;
+    background-color: #e12228;
+}
+
+.sk_bd .buy {
+    width: 288px;
+    height: 49px;
+    margin-top: 13px;
+    background-color: #b1191a;
+    font-size: 20px;
+    line-height: 49px;
+    color: #fff;
+    text-align: center;
+}

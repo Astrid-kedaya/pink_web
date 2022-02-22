@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 检测是否为数组
+        // (1)instanceof 运算符
+        var arr = [];
+        var obj = {};
+        console.log(arr instanceof Array);//返回true
+        console.log(obj instanceof Array);//返回false
+        //Array.isArray(参数) H5新增的方法
+        console.log(Array.isArray(1, 2, 3));//false
+        console.log(Array.isArray([1, 2, 3]));//true
+        console.log(Array.isArray(obj));//false
+
+
+        // 添加或删除数组元素
+        //  1.push()后面添加元素
+        var arr = [1, 2, 3];
+        // arr.push(4,5)
+        console.log(arr.push(4, 5));//返回长度5
+        console.log(arr);//返回[1,2,3,4,5]
+        // 2.unshift()前面添加元素
+        // arr.unshift(-1,0);
+        console.log(arr.unshift(-1, 0));//返回长度7
+        console.log(arr);//[-1, 0, 1, 2, 3, 4, 5]
+        // 3.pop()删除最后一个元素,长度减1,返回该元素
+        console.log(arr.pop());
+        // 4.shift()删除第一个元素,长度减1,返回该元素
+        console.log(arr.shift());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

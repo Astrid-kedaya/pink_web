@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. keyup 按键弹起的时候触发 
+        // document.onkeyup = function(){
+        //     console.log('我弹起了');
+        // }
+        document.addEventListener('keyup', function () {
+            console.log('我弹起了');
+        })
+        //2. keydown 按键按下的时候触发 不松开就一直触发，不停输出‘我按下了’
+        document.addEventListener('keydown', function () {
+            console.log('我按下了');
+        })
+        //3. keypress 按键按下的时候触发 不识别功能键，比如 ctrl shift 箭头等
+        document.addEventListener('keypress', function () {
+            console.log('我按下了press');
+        })
+        //4.三个事件执行顺序 永远是 keydown keypress keyup
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我利用vscode创建的第一个页面</title>
+</head>
+
+<body>
+    <h1>写代码是件快乐的事情</h1>
+    <h2>写代码是件快乐的事情</h2>
+    <h3>写代码是件快乐的事情</h3>
+    ------zjq
+    <p>2020年1月10日至11日，<br />在新加坡国家体育场举行两场嘉年华世界巡回演唱会2020年1月10日至11日，在新加坡国家体育场举行两场嘉年华世界巡回演唱会2020年1月10日至11日，在新加坡国家体育场举行两场嘉年华世界巡回演唱会2020年1月10日至11日，在新加坡国家体育场举行两场嘉年华世界巡回演唱会 [144]  ；3月21日，在浙江卫视全球户外生活文化实境秀节目《周游记》中担任发起人 [145]  ；6月12日，发行单曲《Mojito》 [147]  [330]  ；10月，监制并特别出演赛车题材电影《叱咤风云》 [174-175]  。</p>
+   <p>2021年1月29日，获得中国歌曲TOP排行榜最佳男歌手奖 [148]  ；2月12日，以“云录制”形式在2021年中央广播电视总台春节联欢晚会演唱歌曲《Mojito》 [149]  ；5月12日，凭借单曲《Mojito》入围第32届台湾金曲奖最佳单曲制作人奖 [319] </p> 
+
+   <b>加粗</b>
+   <strong>加粗</strong>
+   <em>倾斜</em>
+   <i>倾斜</i>
+   <del>删除线</del>
+   <s>删除线</s>
+   <ins>下划线</ins>
+   <u>下划线</u>
+   <br />
+   <!--布局：div大盒子占一行，span小盒子跨距-->
+   <div>我是div标签我一个人单独占一行</div>
+   <div>我是div标签我一个人单独占一行</div>
+   <span>baidu</span>
+   <span>souhu</span>
+
+   <h4>图像标签的使用</h4>
+   <img src="可达鸭.png" />
+   <h4>alt 替换文本：图像显示不出来的时候用文字替换</h4>
+   <img src="可达鸭1.png" alt="我是可达鸭,图像显示不出来才能看见这串文字" />
+   <h4>title 提示文本：鼠标放图像上提示的文字</h4>
+   <img src="可达鸭.png" title="我是可达鸭" />
+
+   <h4>width 给图像设置宽度</h4>
+   <img src="可达鸭.png" title="我是可达鸭" width='500' />
+   <h4>height 给图像设置高度</h4>
+   <img src="可达鸭.png" title="我是可达鸭" height="100" />
+   <h4>border 给图像设置边框粗细</h4>
+   <img src="可达鸭.png" title="我是可达鸭" height="100" border='15' />
+
+  <img src='images/可达鸭.png' /><br>
+
+  <table align='center' border='1' cellpadding='20' cellspacing='0' width='500' height='250'>
+      <tr><th>姓名</th> <th>性别</th> <th>年龄</th></tr>
+      <tr><td>可达鸭</td> <td>男</td> <td>1</td></tr>
+      <tr><td>可达鸭</td> <td>女</td> <td>2</td></tr>
+  </table>
+
+ <table align='center' border='1' cellpadding='20' cellspacing='0' width='500' height='250'>
+    <thead>
+        <tr><th>姓名</th> <th>性别</th> <th>年龄</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>可达鸭</td> <td>男</td> <td>1</td></tr>
+        <tr><td>可达鸭</td> <td>女</td> <td>2</td></tr>
+    </tbody>
+</table>
+
+<!--合并单元格-->
+<table align='center' cellpadding='20' cellspacing='0' width='500' height='250' border='1'>
+    <tr>
+        <td></td>
+        <td colspan='2'></td>
+        
+    </tr>
+    <tr>
+        <td rowspan='2'></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<p></p>
+<h4>神奇宝贝：</h4>
+<!--ul中只能放li，其他标签与文字不允许，li中可放所有元素-->
+<ul>
+    <li>可达鸭</li>
+    <li>皮卡丘</li>
+    <li>可小火龙</li>
+</ul>
+<!--有序列表-->
+<ol>
+    <li>可达鸭</li>
+    <li>皮卡丘</li>
+    <li>可小火龙</li>
+</ol>
+<!--自定义列表-->
+<dl>
+    <dt>神奇宝贝</dt>
+    <dd>可达鸭</dd>
+    <dd>皮卡丘</dd>
+    <dd>小火龙</dd>
+</dl>
+<hr>
+<!--表单,看就业班详解-->
+<form action="demo.php" method="post" name='name1'>
+</form>
+<p></p>
+<form >
+    <!-- name，value主要给后台使用 -->
+用户名：<input type="text" name="username" value="请输入用户名" maxlength="6"><br>
+密码：<input type="passward" name="suibian"><br>
+<!-- 单选按钮 -->
+<!-- name是表单元素的名字，实现单选按钮必须有相同的名字才可以多选一 -->
+<!-- 单选和复选框可设置checked属性，当打开页面默认选上这个按钮 -->
+性别：男<input type='radio' name="sex" value="男">女<input type="radio" name="sex" value="女" checked="checked"><br>
+<!-- checkbox复选框，可多选 -->
+爱好： 吃饭<input type='checkbox'> 睡觉<input type='checkbox'> 打豆豆<input type='checkbox' checked=‘checked>
+<br>
+<!-- 提交按钮点了后可以把表单内容交至后台服务器 -->
+<input type="submit" value="这个字可改">
+<input type="reset" value="可改">
+<!-- 定义可点击按钮，多数用于JavaScript启动脚本 -->
+<input type="button" value="获取短信验证码">
+<br>
+<!-- 文件域 上传文件 -->
+上传头像：<input type="file">
+<br>
+<!-- label搭配表单，点了表单元素，光标会定位到要填写的地方，如点了用户名三个字，光标自动选中了框，选择按钮也一样 -->
+<label for="username">用户名：</label><input type="text" name="username" id="username">
+<!-- for和id要一样 -->
+<input type="radio" id='nan' name="sex"><label for="nan">男</label>
+<input type="radio" id='nv' name="sex"><label for="nv">女</label>
+籍贯：<select name="" id="">
+    <option value="">上海</option>
+    <option value="" selected="selected">北京</option>
+    <p></p>
+    今日反馈：<textarea name="" id="" cols="30" rows="10">请输入文字</textarea>
+</select>
+</form>
+</body>
+
+</html>

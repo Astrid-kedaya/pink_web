@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="inner"></div>
+    <div class="create"></div>
+    <script>
+        // innerHTML create效率高
+        var inner = document.querySelector('.inner');
+        // for (var i = 0; i <= 100; i++) {
+        //     inner.innerHTML += '<a href = "#">百度</a>';
+        // }
+        // 改进 用数组拼接 比create效率高
+        var arr = [];
+        for (var i = 0; i <= 100; i++) {
+            arr.push('<a href = "#">百度</a>');
+        }
+        inner.innerHTML = arr.join('');//默认是逗号拼接
+        //createElement
+        var create = document.querySelector('.create');
+        for (var i = 0; i <= 100; i++) {
+            var a = document.createElement('a');
+            create.appendChild(a);
+        }
+
+    </script>
+</body>
+
+</html>

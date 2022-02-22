@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date是一个构造函数，必须使用new来调用创建
+        var arr = new Array();//创建一个数组对象
+        var obj = new Object();//创建一个对象实例
+        //1.使用Date 如果没有参数,返回当前系统的当前时间
+        var date = new Date();
+        console.log(date);
+        // 2.参数常用写法 数字型 1997,10,1 or 字符串型 '1997-10-1 18:8:8'
+        var d1 = new Date(2021, 10, 1);
+        console.log(d1);//返回的是11月不是10月
+        var d2 = new Date('2021-10-1 13:11:8');
+        console.log(d2);//返回正常
+
+
+        // 日期格式化
+        var day = new Date();
+        console.log(day.getFullYear());//返回当前日期的年
+        console.log(day.getMonth());//应该返回1 但这边返回了0(因为月份返回的是0~11,所以小1)
+        console.log(day.getMonth() + 1);//记得+1
+        console.log(day.getDate());//返回几号
+        console.log(day.getDay());//返回周几 周一返回1 周六返回6 但周一返回0!
+        //写一个 2022年 1月 18日 星期二这种格式
+        var year = day.getFullYear();
+        var month = day.getMonth() + 1;
+        var date = day.getDate();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        //因为星期日的索引号是0 
+        var week = day.getDay();
+        console.log('今天是:' + year + '年' + month + '月' + date + '日 ' + arr[week]);
+
+
+        // 日期格式化 时 分 秒
+        console.log(day.getHours());//时
+        console.log(day.getMinutes());//分
+        console.log(day.getSeconds());//秒
+        //封装函数 返回当前的时分秒 格式 08:08:08
+        function getTimer() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;//如果小于10,前面加个0,显示成01的形式
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTimer());
+
+
+        // 以下方法:返回现在距 1970 年 1 月 1 日之间的毫秒数(时间戳)
+        //1.通过 valueof() getTime()
+        var date = new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        //2.简单写法(最常用写法)
+        var date1 = +new Date();
+        console.log(date1);
+        //3.H5 新增的 
+        console.log(Date.now());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

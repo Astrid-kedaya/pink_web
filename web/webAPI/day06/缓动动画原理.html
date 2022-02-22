@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn200">点击可达鸭到200</button>
+    <button class="btn800">点击可达鸭到800</button>
+    <span>可达鸭</span>
+    <script>
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                // 步长值写到定时器里 因为每次步长值都会随着定时器变化
+                // 把步长改为整数 不要出现小数问题
+                // var step = Math.ceil((target - obj.offsetLeft)/10);
+                // 前进（正值）用`Math.ceil` 后退（负值）用`Math.floor`
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                }
+                // 把1换成这个步长换成一个慢慢变小的值
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 30)
+        }
+
+        var span = document.querySelector('span');
+        var btn200 = document.querySelector('.btn200');
+        var btn800 = document.querySelector('.btn800');
+        btn200.addEventListener('click', function () {
+            animate(span, 200);
+        })
+        btn800.addEventListener('click', function () {
+            animate(span, 800);
+        })
+    </script>
+</body>
+
+</html>

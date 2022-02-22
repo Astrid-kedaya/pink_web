@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统注册方式</button>
+    <button>方法监听注册事件</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+        // 1.传统方式注册事件
+        //被下面的alert覆盖了
+        btns[0].onclick = function () {
+            alert('hi~');
+        }
+        btns[0].onclick = function () {
+            alert('how are you');
+        }
+        // 2.方法监听注册方式
+        // 同一元素 同一事件可添加多个处理程序
+        btns[1].addEventListener('click',function(){
+            alert(11);
+        })
+        btns[1].addEventListener('click',function(){
+            alert(22);
+        })
+
+    </script>
+</body>
+
+</html>

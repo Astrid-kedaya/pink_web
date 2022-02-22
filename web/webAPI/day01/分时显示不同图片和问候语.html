@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/上午.jpg" alt="">
+    <div>上午好</div>
+
+    <script>
+        // 如果上午时间打开页面，显示上午好，显示上午的图片
+        // 如果下午时间打开页面，显示下午好，显示下午的图片
+        // 如果晚上时间打开页面，显示晚上好，显示晚上的图片
+        // 1.获取元素
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        // 2.得到当前的小时数
+        var date = new Date();
+        var h = date.getHours();
+        // 3.判断小时数 改变图片和文字
+        if(h<12){
+            div.innerHTML='上午好';
+            img.src="images/上午.jpg";
+        }else if(h<18){
+            div.innerHTML='下午好';
+            img.src="images/下午.jpg";
+        }else{
+            div.innerHTML='晚上好';
+            img.src="images/晚上.jpg";
+        }
+    </script>
+</body>
+
+</html>

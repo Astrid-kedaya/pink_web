@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. 利用字面量创建对象
+        // var obj = {};//创建了一个空的对象
+        var obj = {
+            name: '张三丰',
+            age: 18,
+            sex: '男',
+            sayHai: function () {
+                console.log('hai~');
+            }
+        }
+        //(1) 里面的属性或者方法采用键值对的形式  键 属性名 : 值 属性值
+        //(2) 多个属性或方法之间用逗号隔开
+        //(3) 方法后面跟的是一个匿名函数
+        //2. 使用对象
+        //(1) 调用对象的属性 采取对象名.属性名
+        console.log(obj.age);
+        //(2) 调用属性还有一种方法 对象名['属性名']
+        console.log(obj['age']);
+        //(3) 调用对象的方法 对象名.方法名() 千万别忘记加()
+        obj.sayHai()
+
+
+        // 2.利用new Object创建对象
+        var obj = new Object();//创建了一个空的对象
+        obj.name = '张三丰';
+        obj.age = 18;
+        obj.sayHai = function () {
+            console.log('HAI~');
+        }
+        //(1)利用等号赋值的方法添加对象的属性和方法
+        //(2)每个属性和方法之间用分号结束
+        //调用与上相同
+        console.log(obj.age);
+        console.log(obj['age']);
+        obj.sayHai();
+
+        //3.利用构造函数创造对象
+        // 创建四大天王的对象 相同的属性:名字 年龄 性别 相同的方法: 唱歌
+        // 构造函数的语法格式
+        // function 构造函数名(){
+        //     this.属性 = 值;
+        //     this.方法 = function(){}
+        // }
+        //  调用
+        // new 构造函数名();
+        function Star(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (song) {
+                console.log(song);
+            }
+        }
+        var ldh = new Star('刘德华', 18, '男');//调用函数返回的是一个对象
+        console.log(ldh.age);
+        ldh.sing('冰雨');
+        var zxy = new Star('张学友', 28, '男');
+        console.log(zxy['name']);
+        // 1.构造函数的首字母要大写
+        // 2.构造函数不需要return就能返回结果
+        // 3.调用构造函数必须使用new
+        // 4.只要new Star() 调用函数就创建了一个对象
+        // 5.属性和方法前必须加this
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

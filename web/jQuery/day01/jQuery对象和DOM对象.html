@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.mini.js"></script>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 1.DOM对象 用原生JS获取来的对象
+        var myDiv = document.querySelector('div');//myDiv是一个DOM对象
+        // 2.jQuery对象 用jQuery方法获取来的对象
+        $('div');//是一个jQuery对象
+        // 3.jQuery 对象只能使用jQuery方法 ；DOM 对象则使用原生的JavaScript属性和方法
+        myDiv.style.display = 'none';
+        $('div').hide();
+    </script>
+</body>
+
+</html>

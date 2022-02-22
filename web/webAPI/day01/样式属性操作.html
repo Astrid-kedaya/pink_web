@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .change {
+            background-color: purple;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //1.通过element.style修改元素样式属性 如果样式比较少 or 功能简单的情况下使用
+        //点击div颜色变紫色宽度变250
+        var div = document.querySelector('div');
+        div.onclick = function () {
+            // div.style
+            this.style.backgroundColor = 'purple';
+            this.style.width = '250px'
+        }
+    </script>
+
+    <div></div>
+    <script>
+        //2.通过className
+        var div = document.querySelector('div');
+        div.onclick = function () {
+            this.className = 'change';//当前元素类名改成了change这个类，覆盖了原先的类名
+            
+        }
+    </script>
+
+</body>
+
+</html>

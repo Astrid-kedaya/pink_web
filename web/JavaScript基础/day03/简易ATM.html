@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var balance = 100;
+        // 一直跳出网页面显示所以用循环
+        do {
+            var num = prompt('请输入您要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出');
+            if (num == 1) {
+                var money = parseInt(prompt('输入要存的钱'));
+                balance += money;
+                alert('您的余额为' + balance);
+            } else if (num == 2) {
+                var money = parseInt(prompt('输入要取的钱'));
+                balance -= money;
+                alert('您的余额为' + balance);
+            } else if (num == 3) {
+                alert('您的余额为' + balance);
+            }
+        } while (num != 4);
+        alert('您已退出');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

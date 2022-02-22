@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 随机生成1~10之间的数字，让用户输入一个数字，
+        // 1. 如果大于该数字，就提示，数字大了,继续猜
+        // 2. 如果小于该数字，就提示，数字小了,继续猜
+        // 3. 如果等于该数字，就提示，猜对了，结束程序 
+
+        // 1随机生成1~10之间数字
+        // 2需要猜到正确为止,所以要一直循环
+        // 3while循环更简单
+        // 4核心算法 使用if elseif 多分支判断大于等于小于
+        // function getRandom(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + 1;
+        // }
+        // var random = getRandom(1, 10);
+        // while (true) {//死循环
+        //     var num = prompt('猜一个1~10间的数字:');
+        //     if (num > random) {
+        //         alert('数字大了,继续猜');
+        //     } else if (num < random) {
+        //         alert('数字小了,继续猜');
+        //     } else {
+        //         alert('猜对了');
+        //         break;
+        //     }
+        // }
+
+        // 1~100之间的数字,但只有10此机会
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + 1;
+        }
+        var random = getRandom(1, 100);
+        var value = 0;
+        while (true) {//死循环
+            var num = prompt('猜一个1~100间的数字:');
+            value++;
+            if (value <= 10) {
+                if (num > random) {
+                    alert('数字大了,继续猜');
+                } else if (num < random) {
+                    alert('数字小了,继续猜');
+                } else {
+                    alert('猜对了');
+                    break;
+                }
+            } else {
+                alert('次数超过10次,失败');
+                break;
+            }
+        }
+
+        // 或者
+        // for (var i = 10; i >= 1; i--) {
+        //     var num = prompt('猜一个1~10间的数字:');
+        //     if (num > random) {
+        //         alert('数字大了,继续猜');
+        //     } else if (num < random) {
+        //         alert('数字小了,继续猜');
+        //     } else {
+        //         alert('猜对了');
+        //         break;
+        //     }
+        // }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(Math.PI);//3.141592653589793
+        console.log(Math.max(1, 2, 3));//3
+        console.log(Math.max(1, 2, '可达鸭'));//NaN
+        console.log(Math.max(1, 2, '3'));//隐式转换 把字符串的3转换为数字型3
+        console.log(Math.max(0, true));//1
+        console.log(Math.max());//-Infinity
+        console.log(Math.abs(-1));//1
+        console.log(Math.abs('-1'));//1
+
+        // 3个取整方法
+        // 向下取整
+        console.log(Math.floor(1.7));//1
+        // 向上取整
+        console.log(Math.ceil(1.1));//2
+        // 四舍五入版就近取整 注意 -3.5 结果是-3(.5特殊,往大了取,-3.5往大取为-3,而不是-4)
+        console.log(Math.round(1.1));//1
+        console.log(Math.round(1.5));//2
+        console.log(Math.round(-1.1));//-1
+        console.log(Math.round(-1.5));//-1
+        console.log(Math.round(-1.6));//-2
+
+        // 随机数random() 返回0.0 ~ 1.0（不包含） 之间随机的小数
+        console.log(Math.random());
+        // 得到min（包含）～ max（不包含）之间的随机整数
+        function getRandom1(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        // 得到min（包含）～ max（包含）之间的随机整数
+        function getRandom2(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // 随机点名
+        var arr=['可达鸭','皮卡丘','小火龙','杰尼龟','卡比兽'];
+        console.log(arr[getRandom2(0,arr.length-1)]);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

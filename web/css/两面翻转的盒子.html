@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        perspective: 500px;
+    }
+
+    .box {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        transition: all .4s;
+        /* 让back盒子保留立体空间 */
+        transform-style: preserve-3d;
+    }
+
+    .box:hover {
+        transform: rotateY(180deg);
+    }
+
+    .front,
+    .back {
+        /* 两个盒子叠在一起 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        line-height: 300px;
+        text-align: center;
+        font-size: 40px;
+        color: #fff;
+    }
+
+    .front {
+        background-color: #ffd450;
+        /* 提供层级 防止被back盒子压住 */
+        z-index: 1;
+
+
+    }
+
+    .back {
+        background-color: purple;
+        /* 翻转，让两个盒子背靠背 */
+        transform: rotateY(180deg);
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="front">可达鸭</div>
+        <div class="back">卡比兽</div>
+    </div>
+</body>
+
+</html>

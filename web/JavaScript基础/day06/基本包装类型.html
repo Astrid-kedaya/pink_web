@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = '可达鸭';
+        console.log(str.length);//输出3
+        //对象才有属性和方法 复杂数据类型才有 属性和方法
+        //简单数据类型 为什么会有length属性呢?
+        //基本包装类型:就是把简单数据类型包装成了复杂数据类型
+        //(1)把简单数据类型包装成复杂数据类型
+        var temp = new String('可达鸭');
+        //(2)把临时变量的值给str
+        str = temp;
+        //(3)销毁temp
+        temp = null;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
