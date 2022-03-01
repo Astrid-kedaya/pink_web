@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Father {
+        //     constructor() {
+
+        //     }
+        //     money() {
+        //         console.log(100);
+        //     }
+        // }
+        // class Son extends Father {
+
+        // }
+        // var son = new Son();
+        // son.money(); //输出100
+
+        class Father {
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+            sum (){
+                console.log(this.x + this.y);
+            }
+        }
+
+        class Son extends Father {
+            constructor(x,y){
+                super(x,y); // 调用了父类中的构造函数
+                // this.x = x;
+                // this.y = y; // 直接用this是错误的，这里this指向子类，而继承过来的父类的构造函数的this是指向的父类
+            }
+        }
+        var son = new Son(1,2); // 3
+        son.sum();
+    </script>
+</body>
+
+</html>
