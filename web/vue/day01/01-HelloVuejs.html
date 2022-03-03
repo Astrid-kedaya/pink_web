@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--输出 你好，可达鸭-->
+    <div id="app">{{message}}</div>
+    <!--输出 {{message}}-->
+    <div>{{message}}</div>
+
+    <script src="js/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app', // 用于挂载要管理的元素
+            data: { // 定义数据
+                message: '你好，可达鸭'
+            }
+        })
+
+        // 元素js做法
+        // 1.创建div
+        // 2.定义一个message变量
+        // 3.将message放在div中显示
+    </script>
+</body>
+
+</html>

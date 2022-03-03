@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <img v-bind:src="imgURL" alt="">
+        <a v-bind:href="aHref">可达鸭</a>
+        <!-- 语法糖写法 -->
+        <img :src="imgURL" alt="">
+        <a :href="aHref">可达鸭</a>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '可达鸭',
+                imgURL: 'https://gitee.com/Astrid-kedaya/picturecloud/raw/master/img/bj.png',
+                aHref: 'https://blog.astrid-kedaya.top/'
+            }
+        })
+    </script>
+
+</body>
+
+</html>
