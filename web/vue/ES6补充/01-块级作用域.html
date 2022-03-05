@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <script>
+        // ES5之前因为if和for都没有块级作用域的概念, 所以在很多时候, 我们都必须借助于function的作用域来解决应用外面变量的问题.
+        // ES6中,加入了let, let它是有if和for的块级作用
+
+        {
+            var name = 'kdy';
+            console.log(name); // kdy
+        }
+        console.log(name); // kdy
+
+        // 没有块级作用域引起的问题
+        // if的块级
+        // var func;
+        // if(true){
+        //     var name = 'kdy';
+        //     func = function(){
+        //         console.log(name);
+        //     }
+        // }
+        // name = 'astrid'; 
+        // func(); // astrid
+
+        // for的块级
+        // var btns = document.getElementsByTagName('button');
+        // for (var i = 0; i < btns.length; i++) {
+        //     // btns[i].addEventListener('click', function () {
+        //     // console.log('第' + i + '个按钮被点击'); //第4个按钮被点击(i是0~3)
+        //     // 以前解决方法 闭包
+        //     (function (num) { // 相当于有4个函数
+        //         btns[num].addEventListener('click', function () {
+        //             console.log('第' + num + '个按钮被点击');
+        //         })
+        //     })(i)
+        // }
+
+        const btns = document.getElementsByTagName('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                console.log('第' + i + '个按钮被点击');
+            })
+        }
+
+
+        // ES6
+        // {
+        //     i = 0
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+
+        // {
+        //     i = 1
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+        // {
+        //     i = 2
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+        // {
+        //     i = 3
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+        
+
+        // ES5
+        // var i = 4
+        // {
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+
+        // {
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+
+
+        // {
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+
+
+        // {
+        //     btns[i].addEventListener('click', function () {
+        //         console.log('第' + i + '个按钮被点击');
+        //     })
+        // }
+
+    </script>
+</body>
+
+</html>

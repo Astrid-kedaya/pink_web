@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1. 阻止冒泡 .stop修饰符 -->
+        <div @click="divClick">
+            aaa
+            <button @click.stop="btnClick">按钮</button>
+        </div>
+
+        <br>
+
+        <!-- 2.阻止默认行为 .prevent -->
+        <form action="baidu">
+            <input type="submit" value="提交" @click.prevent="submitClick">
+        </form>
+
+        <!-- 3.监听某个键位的点击 -->
+        <input type="text" @keyup.enter="keyUp">
+        <!-- 或者键位的ASCII码 -->
+        <input type="text" @keyup.13="keyUp">
+
+        <!-- 4. .once的使用 -->
+        <button @click.once="btn2Click">按钮2</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '可达鸭',
+            },
+            methods: {
+                btnClick() {
+                    console.log('btnClick');
+                },
+                divClick() {
+                    console.log('divClick');
+                },
+                submitClick(){
+                    console.log('submitClick');
+                },
+                keyUp(){
+                    console.log("keyUp");
+                },
+                btn2Click(){
+                    console.log('btn2Click');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

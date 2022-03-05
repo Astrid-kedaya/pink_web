@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.注意点一:一旦给const修饰的标识符被赋值后,就不能修改
+        // const name = 'kdy';
+        // name = '111'; // 错误 Assignment to constant variable. 不能修改
+
+        // 2.注意点二: 在使用const定义标识符时,必须进行赋值
+        // const a; // Missing initializer in const declaration
+        
+        // 3.注意点三:常量的含义是指向的对象不不能修改,但是可以改变对象内部的属性
+        const obj = {
+            name: 'kdy',
+            age: 18
+        }
+
+        // obj= {};//错误
+        obj.age = 19;
+    </script>
+</body>
+</html>
