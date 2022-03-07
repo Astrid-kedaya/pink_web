@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 默认传的item 因为是自定义事件 否则的话是默认传event -->
+        <cpn @itemclick="cpnClick"></cpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <button v-for="item in categories" @click="btnClick(item)">{{item.name}}</button>
+        </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const cpn = {
+            template: '#cpn',
+            data() {
+                return {
+                    categories: [
+                        { id: 'aaa', name: '热门推荐' },
+                        { id: 'bbb', name: '手机数码' },
+                        { id: 'ccc', name: '家用家电' },
+                        { id: 'ddd', name: '其他' },
+                    ]
+                }
+            },
+            methods: {
+                btnClick(item) {
+                    // 发射 自定义事件
+                    this.$emit('itemclick', item)
+                }
+            }
+        }
+        const app = new Vue({
+            el: '#app',
+            data: {
+                info: {
+                    name: 'kdy',
+                    height: 1.88,
+                    age: 18
+                },
+                message: '可达鸭'
+            },
+            components: {
+                cpn
+            },
+            methods: {
+                cpnClick(item) {
+                    console.log(item);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
