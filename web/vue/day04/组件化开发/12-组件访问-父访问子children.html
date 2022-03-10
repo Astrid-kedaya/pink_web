@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn></cpn>
+        <cpn></cpn>
+        <cpn ref="aaa"></cpn>
+        <button @click="btnClick">按钮</button>
+    </div>
+
+    <template id="cpn">
+        <div>
+            我是子组件
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '可达鸭'
+            },
+            methods: {
+                btnClick() {
+                    // console.log(this.$children);
+                    // this.$children[0].showMessage();
+                    // for(let i of this.$children){
+                    //     console.log(i.name);
+                    //     i.showMessage();
+                    // }
+
+                    //拿三个cpn（实际中可能第三个之前插入了几个组件，索引号就不是2了）
+                    // $refs 对象类型, 默认是一个空的对象 必须在组件中加ref='xxx'
+                        console.log(this.$refs.aaa.name); // 拿到了第三个
+                }
+            },
+            components:{
+                cpn:{
+                    template:'#cpn',
+                    data(){
+                        return {
+                            name :'我是子组件的name'
+                        }
+                    },
+                    methods:{
+                        showMessage(){
+                            console.log(111)
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
