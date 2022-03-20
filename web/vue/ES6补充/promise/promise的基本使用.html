@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1.使用setTimeout
+        // setTimeout(() => {
+        //     console.log('hello world');
+        // }, 1000)
+
+        // 参数 -> 函数(resolve,reject)
+        // resolve reject 本身又是函数
+        new Promise((resolve, reject) => {
+            // 第一次网络请求的代码
+            setTimeout(() => {
+
+                resolve()
+            }, 1000)
+        }).then(() => {
+            // 第一次处理代码
+            console.log('hello world');
+
+            return new Promise((resolve, reject) => {
+                // 第二次请求
+                setTimeout(() => {
+                    resolve()
+                }, 1000)
+            }).then(() => {
+                // 第二次处理
+                console.log('abc');
+
+                return new Promise((resolve, reject) => {
+                    // 第三次请求
+                    setTimeout(() => {
+                        resolve()
+                    }, 1000)
+                }).then(() => {
+                    // 第三次处理
+                    console.log('xxx');
+                })
+            })
+        })
+
+
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // 成功的时候调用
+                // resolve('abc')
+
+                // 失败的时候调用
+                reject('error')
+            },1000)
+        }).then(data => {
+            // 成功时
+            console.log(data);
+        }).catch(err => {
+            // 失败时
+            console.log(err);
+        })
+    </script>
+</body>
+
+</html>
